@@ -1,0 +1,60 @@
+[2m02:54:01[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mExpected corresponding JSX closing tag for 'h'.
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/pages/login/register.form.tsx:41:47 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m41 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0mh[38;5;249m [0m[38;5;249mi[0m[38;5;249md[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249mg[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249m-[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249m"[0m[38;5;249m>[0m[38;5;249mC[0m[38;5;249mr[0m[38;5;249mi[0m[38;5;249ma[0m[38;5;249mr[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249m<[0m[38;5;249m/[0mh2[38;5;249m>[0m
+ [38;5;240m   │[0m            ┬                                  ─┬  
+ [38;5;240m   │[0m            ╰────────────────────────────────────── Opened here
+ [38;5;240m   │[0m                                                │  
+ [38;5;240m   │[0m                                                ╰── Expected `</h>`
+[38;5;246m────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/Yolanda Lourenço/Desktop/Front-YETU/src/pages/login/register.form.tsx[39m
+      at transformWithOxc (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:3344:19)
+      at TransformPluginContext.transform (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:3415:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:30387:51)
+      at async loadAndTransform (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:24646:26)
+      at async viteTransformMiddleware (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:24440:20)
+[2m02:54:01[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/pages/login/register.form.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m02:54:01[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mExpected corresponding JSX closing tag for 'h'.
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/pages/login/register.form.tsx:41:47 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m41 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0mh[38;5;249m [0m[38;5;249mi[0m[38;5;249md[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249mg[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249m-[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249m"[0m[38;5;249m>[0m[38;5;249mC[0m[38;5;249mr[0m[38;5;249mi[0m[38;5;249ma[0m[38;5;249mr[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249m<[0m[38;5;249m/[0mh2[38;5;249m>[0m
+ [38;5;240m   │[0m            ┬                                  ─┬  
+ [38;5;240m   │[0m            ╰────────────────────────────────────── Opened here
+ [38;5;240m   │[0m                                                │  
+ [38;5;240m   │[0m                                                ╰── Expected `</h>`
+[38;5;246m────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/Yolanda Lourenço/Desktop/Front-YETU/src/pages/login/register.form.tsx[39m
+      at transformWithOxc (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:3344:19)
+      at TransformPluginContext.transform (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:3415:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:30387:51)
+      at async loadAndTransform (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:24646:26)
+      at async viteTransformMiddleware (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:24440:20)
+[2m02:54:01[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/pages/login/register.form.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m02:54:03[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mExpected corresponding JSX closing tag for 'h3'.
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/pages/login/register.form.tsx:41:48 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m41 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0mh3[38;5;249m [0m[38;5;249mi[0m[38;5;249md[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249mg[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249m-[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249m"[0m[38;5;249m>[0m[38;5;249mC[0m[38;5;249mr[0m[38;5;249mi[0m[38;5;249ma[0m[38;5;249mr[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249m<[0m[38;5;249m/[0mh2[38;5;249m>[0m
+ [38;5;240m   │[0m            ─┬                                  ─┬  
+ [38;5;240m   │[0m             ╰────────────────────────────────────── Opened here
+ [38;5;240m   │[0m                                                 │  
+ [38;5;240m   │[0m                                                 ╰── Expected `</h3>`
+[38;5;246m────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/Yolanda Lourenço/Desktop/Front-YETU/src/pages/login/register.form.tsx[39m
+      at transformWithOxc (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:3344:19)
+      at TransformPluginContext.transform (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:3415:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:30387:51)
+      at async loadAndTransform (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:24646:26)
+      at async viteTransformMiddleware (file:///C:/Users/Yolanda%20Louren%C3%A7o/Desktop/Front-YETU/node_modules/vite/dist/node/chunks/node.js:24440:20)
+[2m02:54:03[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/pages/login/register.form.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
