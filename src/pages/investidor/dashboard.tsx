@@ -1,72 +1,137 @@
-export default function InvestidorDashboard() {
-    return (
-        <main className="investidor-dashboard">
-            <header className="investor-header">
-                <strong>Hub Colaborativo</strong>
+﻿import { 
+    Bell, 
+    Search, 
+    UserRound, 
+    Grid2X2, 
+    Handshake, 
+    BookOpen, 
+    FileText, 
+    Settings, 
+    LogOut } from 'lucide-react'
 
-                <div className="investor-search">
-                    <input type="search" placeholder="Buscar startups..." />
-                </div>
-            </header>
+    export default function InvestidorDashboard() {
 
-            <div className="investor-layout">
-                <aside className="investor-sidebar">
-                    <div className="investor-profile">
-                        <strong>Maria Silva</strong>
-                        <span>Investidora</span>
-                    </div>
+  return (
 
-                    <nav>
-                        <a href="#visao-geral">Visão Geral</a>
-                        <a className="active" href="#matches">Matches</a>
-                        <a href="#portfolio">Portfólio</a>
-                        <a href="#oportunidades">Explorar Oportunidades</a>
-                        <a href="#preferencias">Preferências</a>
-                        <a href="#mensagens">Mensagens</a>
-                        <a href="#relatorios">Relatórios</a>
-                    </nav>
+    <main className="investidor-dashboard">
+      <aside className="dashboard-sidebar">
+        <div className="sidebar-company">
+          <span className="sidebar-icon">
+            <UserRound size={17} />
+          </span>
+          <div>
+            <strong>Maria Silva</strong>
+            <span>Investidora</span>
+          </div>
+        </div>
 
-                    <div className="investor-sidebar-bottom">
-                        <a href="#suporte">Suporte</a>
-                        <a href="#sair">Sair</a>
-                    </div>
-                </aside>
+        <nav>
+          <a className="active" href="#visao-geral">
+            <Grid2X2 size={15} /> Visão Geral
+          </a>
+          <a href="#matches">
+            <Handshake size={15} /> Matches
+          </a>
+          <a href="#portfolio">
+            <FileText size={15} /> Portfólio
+          </a>
+          <a href="#explorar">
+            <BookOpen size={15} /> Explorar Oportunidades
+          </a>
+          <a href="#preferencias">
+            <Settings size={15} /> Preferências
+          </a>
+        </nav>
 
-                <section className="investor-content">
-                    <h1>Painel do Investidor</h1>
-                    <div className="investor-stats">
-                        <article className="investor-stat-card">
-                            <span>Patrimônio Alocado</span>
-                            <strong>480,000Kz</strong>
-                            <p>+12.4% este ano</p>
-                        </article>
+        <div className="sidebar-footer">
+          <a href="#suporte">
+            <UserRound size={14} /> Suporte
+          </a>
+          <a href="#sair">
+            <LogOut size={14} /> Sair
+          </a>
+        </div>
+      </aside>
 
-                        <article className="investor-stat-card">
-                            <span>Startups Ativas</span>
-                            <strong>06</strong>
-                            <p>Total: 100% verificadas</p>
-                        </article>
+      <section className="dashboard-content">
+        <header className="dashboard-header">
+          <div>
+            <h1>Painel do Investidor</h1>
+            <p>Veja suas oportunidades e o próximo match.</p>
+          </div>
 
-                        <article className="investor-stat-card">
-                            <span>Próximo Match</span>
-                            <strong>Loja do João</strong>
-                            <p>85% de compatibilidade</p>
-                        </article>
-                    </div>
-                    <section className="investor-preferences" id="preferencias">
-                        <div className="investor-section-title">
-                            <h2>Suas Preferências</h2>
-                            <a href="#editar-preferencias">Editar</a>
-                        </div>
+          <div className="header-actions">
+            <button type="button" aria-label="Buscar">
+              <Search size={18} />
+            </button>
+            <button type="button" aria-label="Notificações">
+              <Bell size={18} />
+            </button>
+          </div>
+        </header>
 
-                        <div className="preference-list">
-                            <span>Tech & Commerce</span>
-                            <span>20,000Kz - 100,000Kz</span>
-                            <span>Angola (Nacional)</span>
-                        </div>
-                    </section>
-                </section>
+        <div className="overview-cards">
+          <article className="card">
+            <strong>R$ 480k</strong>
+            <p>Patrimônio Alocado</p>
+          </article>
+          <article className="card">
+            <strong>06</strong>
+            <p>Startups Ativas</p>
+          </article>
+          <article className="card">
+            <strong>Loja do João</strong>
+            <p>Próximo Match</p>
+          </article>
+        </div>
+
+        <section className="preferences-section">
+          <div className="section-header">
+            <strong>Suas Preferências</strong>
+            <button type="button">Editar</button>
+          </div>
+
+          <div className="preferences-list">
+            <div>
+              <strong>Setores</strong>
+              <span>Tech & Commerce</span>
             </div>
-        </main>
-    );
+            <div>
+              <strong>Ticket Médio</strong>
+              <span>R$ 20k - R$ 100k</span>
+            </div>
+            <div>
+              <strong>Região</strong>
+              <span>Brasil (Nacional)</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="matches-section">
+          <div className="section-header">
+            <strong>Oportunidades de Match</strong>
+            <button type="button">Ver todos</button>
+          </div>
+
+          <article className="match-card">
+            <div className="match-card-top">
+              <span>Empresa Verificada</span>
+              <strong>85% MATCH</strong>
+            </div>
+            <h2>Loja de Informática do João</h2>
+            <p>Expansão de infraestrutura para e-commerce e nova unidade física em polo tecnológico.</p>
+            <div className="match-details">
+              <span>Necessidade: R$ 80.000</span>
+              <span>ROI: 18% a.a.</span>
+              <span>Equity: 5% - 8%</span>
+            </div>
+            <div className="match-actions">
+              <button type="button">Interesse em Investir</button>
+              <button type="button">Ver Detalhes</button>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+  )
 }
