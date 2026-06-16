@@ -1680,18 +1680,6 @@ a {
   font-weight: 900;
 }
 
-.dashboard-header nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-.dashboard-header nav a {
-  color: #30364f;
-  font-size: 12px;
-  font-weight: 600;
-}
-
 .dashboard-layout {
   display: grid;
   grid-template-columns: 230px minmax(0, 1fr);
@@ -1729,15 +1717,26 @@ a {
   gap: 8px;
 }
 
-.dashboard-sidebar nav a {
+.dashboard-sidebar nav a,
+.dashboard-sidebar nav button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
   border-radius: 8px;
+  border: 0;
   padding: 11px 12px;
+  background: transparent;
   color: #27304c;
+  text-align: left;
+  font: inherit;
   font-size: 13px;
   font-weight: 700;
+  cursor: pointer;
 }
 
-.dashboard-sidebar nav a.active {
+.dashboard-sidebar nav a.active,
+.dashboard-sidebar nav button.active {
   background: #67efaa;
   color: #053b2a;
 }
@@ -1883,6 +1882,7 @@ a {
 
 
 .matches-section,
+.partners-section,
 .learning-section {
   margin-top: 24px;
 }
@@ -1973,6 +1973,48 @@ a {
   border-color: #007a53;
   background: #007a53;
   color: white;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 170px;
+  border: 1px solid #d8dce8;
+  border-radius: 10px;
+  padding: 24px;
+  background: #ffffff;
+}
+
+.partner-card h3 {
+  margin: 0 0 10px;
+  color: #11183f;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.partner-card p {
+  flex: 1;
+  margin: 0 0 18px;
+  color: #4d566f;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.partner-card button {
+  width: 100%;
+  min-height: 36px;
+  border: 1px solid #082b82;
+  border-radius: 6px;
+  background: #082b82;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 
@@ -2134,6 +2176,7 @@ a {
   }
 
   .matches-grid,
+  .partners-grid,
   .learning-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2181,6 +2224,7 @@ a {
   }
 
   .matches-grid,
+  .partners-grid,
   .learning-grid {
     grid-template-columns: 1fr;
   }
@@ -2252,6 +2296,7 @@ a {
 }
 
 .dashboard-sidebar nav a,
+.dashboard-sidebar nav button,
 .sidebar-support a {
   display: flex;
   align-items: center;
@@ -2259,8 +2304,30 @@ a {
 }
 
 .dashboard-sidebar nav a svg,
+.dashboard-sidebar nav button svg,
 .sidebar-support a svg {
   flex: 0 0 auto;
+}
+
+.dashboard-empty-state {
+  padding: 28px;
+  border: 1px solid #d8dce8;
+  border-radius: 10px;
+  background: #fbfaff;
+}
+
+.dashboard-empty-state h2 {
+  margin: 0 0 8px;
+  color: #050b2f;
+  font-size: 19px;
+  line-height: 1.2;
+}
+
+.dashboard-empty-state p {
+  margin: 0;
+  color: #596178;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 
