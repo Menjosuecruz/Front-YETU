@@ -2383,3 +2383,378 @@ a {
     white-space: normal;
   }
 }
+
+
+.marketplace-page {
+  min-height: 100svh;
+  padding: 32px;
+  background: #f6f7fb;
+  color: #06125d;
+}
+
+.marketplace-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.marketplace-header h1 {
+  margin: 0;
+  color: #06125d;
+  font-size: 26px;
+  line-height: 1.15;
+  font-weight: 900;
+}
+
+.marketplace-header p {
+  max-width: 760px;
+  margin: 8px 0 0;
+  color: #5f687c;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.marketplace-header input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #dfe3ee;
+  border-radius: 8px;
+  padding: 0 14px;
+  background: #ffffff;
+  color: #1f2942;
+  font-size: 13px;
+}
+
+.marketplace-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.marketplace-filters button {
+  min-height: 32px;
+  border: 1px solid #dfe3ee;
+  border-radius: 999px;
+  padding: 0 14px;
+  background: #ffffff;
+  color: #34405b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.marketplace-filters button.active {
+  border-color: #082b82;
+  background: #082b82;
+  color: #ffffff;
+}
+
+.marketplace-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+
+.featured-benefit-card,
+.benefit-card {
+  border: 1px solid #dfe3ee;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgba(16, 24, 40, 0.04);
+}
+
+.featured-benefit-card {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 22px;
+  grid-row: span 2;
+  padding: 18px;
+}
+
+.benefit-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 210px;
+  padding: 18px;
+}
+
+.benefit-image {
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(135deg, #082b82, #071a4f 62%, #0f766e);
+  background-size: 18px 18px, 18px 18px, auto;
+}
+
+.benefit-image.large {
+  min-height: 280px;
+}
+
+.benefit-image.small {
+  min-height: 120px;
+}
+
+.benefit-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.benefit-category {
+  color: #0f766e;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.featured-benefit-card h2,
+.benefit-card h3 {
+  margin: 6px 0 8px;
+  color: #06125d;
+  line-height: 1.2;
+}
+
+.featured-benefit-card h2 {
+  font-size: 22px;
+}
+
+.benefit-card h3 {
+  font-size: 16px;
+}
+
+.featured-benefit-card p,
+.benefit-card p,
+.benefit-description {
+  margin: 0;
+  color: #5f687c;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.benefit-highlight {
+  width: 100%;
+  display: grid;
+  gap: 4px;
+  margin: 22px 0;
+  border-radius: 8px;
+  padding: 14px;
+  background: #ccfce5;
+  color: #065f46;
+}
+
+.benefit-highlight strong {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.benefit-highlight span {
+  font-size: 12px;
+}
+
+.benefit-highlight.small {
+  margin: 6px 0;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.benefit-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: #eaf0ff;
+  color: #082b82;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.benefit-badge {
+  border: 1px solid #67efaa;
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: #067a4a;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.featured-benefit-card button,
+.benefit-card button {
+  min-height: 38px;
+  border: 0;
+  border-radius: 7px;
+  padding: 0 16px;
+  background: #082b82;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.benefit-card button {
+  width: 100%;
+  margin-top: auto;
+}
+
+
+.partner-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 24px;
+  border: 1px solid #dfe3ee;
+  border-radius: 10px;
+  padding: 24px;
+  background: #ffffff;
+}
+
+.partner-cta h2 {
+  margin: 0 0 8px;
+  color: #06125d;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.partner-cta p {
+  max-width: 760px;
+  margin: 0;
+  color: #5f687c;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.partner-cta button {
+  min-width: 170px;
+  min-height: 42px;
+  border: 0;
+  border-radius: 7px;
+  background: #082b82;
+  color: white;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+.marketplace-footer {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 2fr;
+  gap: 36px;
+  margin-top: 24px;
+  border-top: 1px solid #dfe3ee;
+  padding: 32px 0 0;
+  color: #5f687c;
+}
+
+.marketplace-footer h3,
+.marketplace-footer h4 {
+  margin: 0 0 12px;
+  color: #06125d;
+  font-weight: 900;
+}
+
+.marketplace-footer h3 {
+  font-size: 18px;
+}
+
+.marketplace-footer h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.marketplace-footer p,
+.marketplace-footer a {
+  margin: 0;
+  color: #5f687c;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.marketplace-footer a {
+  display: block;
+  text-decoration: none;
+}
+
+.marketplace-footer nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.marketplace-footer nav div {
+  display: grid;
+  gap: 8px;
+}
+
+.marketplace-footer > span {
+  grid-column: 1 / -1;
+  border-top: 1px solid #dfe3ee;
+  padding-top: 16px;
+  text-align: center;
+  color: #8b93a5;
+  font-size: 11px;
+}
+
+
+@media (max-width: 1100px) {
+  .marketplace-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .featured-benefit-card {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .marketplace-page {
+    padding: 22px;
+  }
+
+  .marketplace-header {
+    grid-template-columns: 1fr;
+  }
+
+  .marketplace-content {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-benefit-card {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-image.large {
+    min-height: 220px;
+  }
+
+  .partner-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .partner-cta button {
+    width: 100%;
+  }
+
+  .marketplace-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .marketplace-footer nav {
+    grid-template-columns: 1fr;
+  }
+}

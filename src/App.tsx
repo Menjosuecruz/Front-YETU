@@ -4,8 +4,9 @@ import RegisterForm from './pages/login/register.form';
 import LandingPage from './pages/home/landingPage';
 import EmpreendedorDashboard from './pages/empreendedor/dashboard';
 import InvestidorDashboard from './pages/investidor/dashboard';
+import ParceiroMarketplace from './pages/parceiro/marketplace';
 
-type View = 'landing' | 'login' | 'register' | 'empreendedor-dashboard' | 'investidor-dashboard';
+type View = 'landing' | 'login' | 'register' | 'empreendedor-dashboard' | 'investidor-dashboard' | 'parceiro-marketplace';
 type AccountType = 'empreendedor' | 'investidor' | 'parceiro';
 
 const routes: Record<View, string> = {
@@ -14,7 +15,9 @@ const routes: Record<View, string> = {
   register: '/register',
   'empreendedor-dashboard': '/empreendedor/dashboard',
   'investidor-dashboard': '/investidor/dashboard',
+  'parceiro-marketplace': '/parceiro/marketplace',
 };
+
 
 function getViewFromPath(pathname: string): View {
   if (pathname === routes.login) {
@@ -32,6 +35,11 @@ function getViewFromPath(pathname: string): View {
   if (pathname === routes['investidor-dashboard']) {
     return 'investidor-dashboard';
   }
+
+  if (pathname === routes['parceiro-marketplace']) {
+    return 'parceiro-marketplace';
+  }
+
 
   return 'landing';
 }
@@ -58,7 +66,17 @@ export default function App() {
   };
 
   const openDashboard = (type: AccountType) => {
-    navigateTo(type === 'empreendedor' ? 'empreendedor-dashboard' : 'investidor-dashboard');
+    if (type === 'empreendedor') {
+      navigateTo('empreendedor-dashboard');
+      return;
+    }
+
+    if (type === 'investidor') {
+      navigateTo('investidor-dashboard');
+      return;
+    }
+
+    navigateTo('parceiro-marketplace');
   };
 
   if (view === 'empreendedor-dashboard') {
@@ -67,6 +85,10 @@ export default function App() {
 
   if (view === 'investidor-dashboard') {
     return <InvestidorDashboard />;
+  }
+
+  if (view === 'parceiro-marketplace') {
+    return <ParceiroMarketplace />;
   }
 
   if (view === 'login') {
