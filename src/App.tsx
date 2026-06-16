@@ -6,7 +6,7 @@ import EmpreendedorDashboard from './pages/empreendedor/dashboard';
 import InvestidorDashboard from './pages/investidor/dashboard';
 
 type View = 'landing' | 'login' | 'register' | 'empreendedor-dashboard' | 'investidor-dashboard';
-type AccountType = 'empreendedor' | 'investidor';
+type AccountType = 'empreendedor' | 'investidor' | 'parceiro';
 
 const routes: Record<View, string> = {
   landing: '/',
