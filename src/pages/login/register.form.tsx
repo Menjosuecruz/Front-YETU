@@ -1,3 +1,4 @@
+import type { FormEvent } from 'react';
 import {
   ArrowLeft,
   BriefcaseBusiness,
@@ -18,6 +19,7 @@ type RegisterFormProps = {
   onAccountTypeChange: (type: AccountType) => void;
   onBack: () => void;
   onLogin: () => void;
+  onRegisterSuccess: () => void;
 };
 
 export default function RegisterForm({
@@ -25,8 +27,13 @@ export default function RegisterForm({
   onAccountTypeChange,
   onBack,
   onLogin,
+  onRegisterSuccess,
 }: RegisterFormProps) {
   const isEntrepreneur = accountType === 'empreendedor';
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    onRegisterSuccess();
+  };
 
   return (
     <main className="login-page animate-ui-auth">
@@ -68,7 +75,7 @@ export default function RegisterForm({
           </button>
         </div>
 
-        <form className="login-form register-form animate-ui-auth-fields">
+        <form className="login-form register-form animate-ui-auth-fields" onSubmit={handleSubmit}>
           <Slides className="auth-field-motion" direction="up" offset={12} delay={0.18}>
             <div className="form-grid">
               <label>
