@@ -73,12 +73,10 @@ a {
 .animate-ui-shine::after {
   position: absolute;
   inset: -55%;
-  background: linear-gradient(
-    var(--shine-deg, -15deg),
-    transparent 35%,
-    var(--shine-color, #ffffff) 50%,
-    transparent 65%
-  );
+  background: linear-gradient(var(--shine-deg, -15deg),
+      transparent 35%,
+      var(--shine-color, #ffffff) 50%,
+      transparent 65%);
   content: "";
   opacity: 0;
   pointer-events: none;
@@ -115,9 +113,9 @@ a {
   display: contents;
 }
 
-.login-form > .animate-ui-magnetic,
-.login-form > .animate-ui-magnetic > .animate-ui-shine,
-.login-form > .animate-ui-magnetic > .animate-ui-shine > .login-submit {
+.login-form>.animate-ui-magnetic,
+.login-form>.animate-ui-magnetic>.animate-ui-shine,
+.login-form>.animate-ui-magnetic>.animate-ui-shine>.login-submit {
   width: 100%;
 }
 
@@ -132,7 +130,7 @@ a {
 }
 
 
-.loginBrand{
+.loginBrand {
   font-size: 28px;
   font-weight: 800;
 }
@@ -287,6 +285,7 @@ a {
 }
 
 @keyframes animate-ui-header-shine {
+
   0%,
   46% {
     background-position: 180% 0, 0 0;
@@ -311,6 +310,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .animate-ui-navbar,
   .animate-ui-navbar::before,
   .brand,
@@ -659,7 +659,7 @@ a {
   letter-spacing: 0;
 }
 
-.section-block > p,
+.section-block>p,
 .section-heading p {
   margin: 10px 0 0;
   color: #697187;
@@ -928,7 +928,7 @@ a {
   text-align: center;
 }
 
-.partners-strip > span {
+.partners-strip>span {
   color: #353d55;
   font-size: 11px;
   font-weight: 800;
@@ -1251,35 +1251,35 @@ a {
   gap: 18px;
 }
 
-.animate-ui-auth-fields > * {
+.animate-ui-auth-fields>* {
   animation: animate-ui-auth-field-in 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.animate-ui-auth-fields > *:nth-child(1) {
+.animate-ui-auth-fields>*:nth-child(1) {
   animation-delay: 230ms;
 }
 
-.animate-ui-auth-fields > *:nth-child(2) {
+.animate-ui-auth-fields>*:nth-child(2) {
   animation-delay: 290ms;
 }
 
-.animate-ui-auth-fields > *:nth-child(3) {
+.animate-ui-auth-fields>*:nth-child(3) {
   animation-delay: 350ms;
 }
 
-.animate-ui-auth-fields > *:nth-child(4) {
+.animate-ui-auth-fields>*:nth-child(4) {
   animation-delay: 410ms;
 }
 
-.animate-ui-auth-fields > *:nth-child(5) {
+.animate-ui-auth-fields>*:nth-child(5) {
   animation-delay: 470ms;
 }
 
-.animate-ui-auth-fields > *:nth-child(6) {
+.animate-ui-auth-fields>*:nth-child(6) {
   animation-delay: 530ms;
 }
 
-.animate-ui-auth-fields > *:nth-child(7) {
+.animate-ui-auth-fields>*:nth-child(7) {
   animation-delay: 590ms;
 }
 
@@ -1292,7 +1292,7 @@ a {
   text-align: left;
 }
 
-.login-form label > span {
+.login-form label>span {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1308,7 +1308,7 @@ a {
     transform 160ms ease;
 }
 
-.login-form label > span:focus-within {
+.login-form label>span:focus-within {
   border-color: rgba(8, 48, 139, 0.36);
   box-shadow: 0 0 0 4px rgba(8, 48, 139, 0.08);
   transform: translateY(-1px);
@@ -1442,6 +1442,7 @@ a {
 }
 
 @keyframes animate-ui-auth-shimmer {
+
   0%,
   48% {
     transform: translateX(-120%);
@@ -1454,6 +1455,7 @@ a {
 }
 
 @keyframes animate-ui-auth-orb {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0) scale(1);
@@ -1465,6 +1467,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .animate-ui-auth::before,
   .animate-ui-auth::after,
   .animate-ui-auth-back,
@@ -1472,7 +1475,7 @@ a {
   .animate-ui-auth-switch,
   .animate-ui-auth-switch::before,
   .account-switch button.selected,
-  .animate-ui-auth-fields > * {
+  .animate-ui-auth-fields>* {
     animation: none;
   }
 }
@@ -1745,14 +1748,14 @@ a {
   padding: 32px;
 }
 
-.dashboard-content > h1 {
+.dashboard-content>h1 {
   margin: 0;
   color: #050b2f;
   font-size: 28px;
   line-height: 1.15;
 }
 
-.dashboard-content > p {
+.dashboard-content>p {
   margin: 6px 0 26px;
   color: #596178;
   font-size: 13px;
@@ -1850,7 +1853,7 @@ a {
   box-shadow: 0 14px 26px rgba(8, 43, 130, 0.22);
 }
 
-.investment-card > span {
+.investment-card>span {
   color: #b9c9ff;
   font-size: 12px;
   font-weight: 900;
@@ -2699,7 +2702,7 @@ a {
   gap: 8px;
 }
 
-.marketplace-footer > span {
+.marketplace-footer>span {
   grid-column: 1 / -1;
   border-top: 1px solid #dfe3ee;
   padding-top: 16px;
@@ -2717,6 +2720,10 @@ a {
   .featured-benefit-card {
     grid-column: 1 / -1;
     grid-row: auto;
+  }
+
+  .opportunities-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -2755,6 +2762,117 @@ a {
   }
 
   .marketplace-footer nav {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunities-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.marketplace-section-heading {
+  margin: 28px 0 16px;
+}
+
+.marketplace-section-heading h2 {
+  margin: 0;
+  color: #06125d;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.marketplace-section-heading p {
+  max-width: 760px;
+  margin: 6px 0 0;
+  color: #5f687c;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.business-opportunities {
+  margin-top: 30px;
+}
+
+.opportunities-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.business-opportunity-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid #dfe3ee;
+  border-radius: 10px;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgba(16, 24, 40, 0.04);
+}
+
+.business-opportunity-card>span {
+  width: max-content;
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: #eaf0ff;
+  color: #082b82;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.business-opportunity-card h3 {
+  margin: 0;
+  color: #06125d;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.business-opportunity-card p {
+  margin: 0;
+  color: #5f687c;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.business-opportunity-card div {
+  display: grid;
+  gap: 4px;
+  margin-top: auto;
+  border-top: 1px solid #dfe3ee;
+  padding-top: 14px;
+}
+
+.business-opportunity-card strong {
+  color: #06125d;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.business-opportunity-card small {
+  color: #5f687c;
+  font-size: 12px;
+}
+
+.business-opportunity-card button {
+  min-height: 38px;
+  border: 0;
+  border-radius: 7px;
+  background: #082b82;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+@media (max-width: 1100px) {
+  .opportunities-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .opportunities-list {
     grid-template-columns: 1fr;
   }
 }

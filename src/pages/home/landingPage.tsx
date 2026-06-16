@@ -34,7 +34,7 @@ export default function LandingPage({ onLogin, onRegister }: LandingPageProps) {
               Empreendedores
             </a>
             <a href="#investidores">Investidores</a>
-            <a href="#parceiros">Parceiros</a>
+            <a href="#marketplace">Marketplace</a>
           </Slides>
         </nav>
 
@@ -161,21 +161,20 @@ export default function LandingPage({ onLogin, onRegister }: LandingPageProps) {
             </a>
           </article>
 
-          <article id="parceiros" className="pillar-card">
+          <article id="marketplace" className="pillar-card">
             <span className="icon-bubble purple">
               <Handshake size={18} />
             </span>
-            <h3>Parceiros</h3>
+            <h3>Marketplace</h3>
             <p>
-              Apoie o ecossistema com serviços especializados e ganhe visibilidade entre os
-              principais players do mercado.
+              Encontre parceiros, serviços estratégicos e oportunidades de negócio para acelerar o crescimento da sua empresa.
             </p>
             <ul>
-              <li>Marketplace de Serviços</li>
-              <li>Eventos de Networking</li>
+              <li>Parceiros Verificados</li>
+              <li>Oportunidades de Negócio</li>
             </ul>
             <a href="#login" onClick={onRegister}>
-              Tornar-se Parceiro
+              Explorar Marketplace
               <ArrowRight size={13} />
             </a>
           </article>

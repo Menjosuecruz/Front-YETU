@@ -20,6 +20,11 @@ export default function ParceiroMarketplace() {
                 <button type="button">Software SaaS</button>
             </section>
 
+            <section className="marketplace-section-heading">
+                <h2>Parceiros em Destaque</h2>
+                <p>Serviços, benefícios e soluções estratégicas disponíveis para membros do Hub.</p>
+            </section>
+
             <section className="marketplace-content">
                 <article className="featured-benefit-card">
                     <div className="benefit-image large" />
@@ -114,6 +119,55 @@ export default function ParceiroMarketplace() {
                     <button type="button">Saber mais</button>
                 </article>
             </section>
+
+            <section className="business-opportunities">
+                <div className="marketplace-section-heading">
+                    <h2>Oportunidades de Negócio</h2>
+                    <p>Conexões abertas para parceiros que desejam oferecer serviços, soluções ou colaboração estratégica.</p>
+                </div>
+
+                <div className="opportunities-list">
+                    <article className="business-opportunity-card">
+                        <span>Startup em crescimento</span>
+                        <h3>Loja de Informática João</h3>
+                        <p>Busca parceiro para expansão de e-commerce, automação comercial e suporte técnico recorrente.</p>
+
+                        <div>
+                            <strong>Necessidade</strong>
+                            <small>Marketing, tecnologia e operações</small>
+                        </div>
+
+                        <button type="button">Ver oportunidade</button>
+                    </article>
+
+                    <article className="business-opportunity-card">
+                        <span>Programa corporativo</span>
+                        <h3>Hub Retail Angola</h3>
+                        <p>Procura consultorias e fornecedores para apoiar pequenos negócios no setor de varejo.</p>
+
+                        <div>
+                            <strong>Perfil ideal</strong>
+                            <small>Jurídico, contabilidade e formação</small>
+                        </div>
+
+                        <button type="button">Ver oportunidade</button>
+                    </article>
+
+                    <article className="business-opportunity-card">
+                        <span>Parceria estratégica</span>
+                        <h3>Fintech Pagamentos+</h3>
+                        <p>Aberta a parceiros que possam integrar soluções de pagamento, onboarding e suporte ao cliente.</p>
+
+                        <div>
+                            <strong>Objetivo</strong>
+                            <small>Integração comercial e tecnológica</small>
+                        </div>
+
+                        <button type="button">Ver oportunidade</button>
+                    </article>
+                </div>
+            </section>
+
             <section className="partner-cta">
                 <div>
                     <h2>Quer se tornar um parceiro?</h2>
