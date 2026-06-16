@@ -1,3 +1,4 @@
+import type { FormEvent } from 'react';
 import { ArrowLeft, Handshake, Landmark, Lock, Mail, Rocket } from 'lucide-react';
 import { Fade, Slide, Slides } from '../../components/animate-ui/effects';
 
@@ -8,9 +9,17 @@ type LoginFormProps = {
   onAccountTypeChange: (type: AccountType) => void;
   onBack: () => void;
   onRegister: () => void;
+  onLoginSuccess: () => void;
 };
 
-export default function LoginForm({ accountType, onAccountTypeChange, onBack, onRegister }: LoginFormProps) {
+export default function LoginForm({
+  accountType,
+  onAccountTypeChange,
+  onBack,
+  onRegister,
+  onLoginSuccess,
+}: LoginFormProps) {
+
   const isEntrepreneur = accountType === 'empreendedor';
   const isInvestor = accountType === 'investidor';
   const isPartner = accountType === 'parceiro';
@@ -24,6 +33,10 @@ export default function LoginForm({ accountType, onAccountTypeChange, onBack, on
     investidor: 'Investidor',
     parceiro: 'Parceiro',
   }[accountType];
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+  onLoginSuccess();
+};
 
   return (
     <main className="login-page animate-ui-auth">
@@ -69,7 +82,7 @@ export default function LoginForm({ accountType, onAccountTypeChange, onBack, on
             </button>
           </div>
 
-          <form className="login-form animate-ui-auth-fields">
+          <form className="login-form animate-ui-auth-fields" onSubmit={handleSubmit}>
             <Slides className="auth-field-motion" direction="up" offset={12} delay={0.18}>
               <label>
                 Email

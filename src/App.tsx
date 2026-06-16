@@ -98,6 +98,7 @@ export default function App() {
         onAccountTypeChange={setAccountType}
         onBack={() => navigateTo('landing')}
         onRegister={() => navigateTo('register')}
+        onLoginSuccess={() => openDashboard(accountType)}
       />
     );
   }
