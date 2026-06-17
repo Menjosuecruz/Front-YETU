@@ -6,13 +6,21 @@ import EmpreendedorDashboard from './pages/empreendedor/dashboard';
 import InvestidorDashboard from './pages/investidor/dashboard';
 import ParceiroMarketplace from './pages/parceiro/marketplace';
 
-type View = 'landing' | 'login' | 'register' | 'empreendedor-dashboard' | 'investidor-dashboard' | 'parceiro-marketplace';
+type View =
+  | 'landing'
+  | 'login'
+  | 'register'
+  | 'marketplace'
+  | 'empreendedor-dashboard'
+  | 'investidor-dashboard'
+  | 'parceiro-marketplace';
 type AccountType = 'empreendedor' | 'investidor' | 'parceiro';
 
 const routes: Record<View, string> = {
   landing: '/',
   login: '/login',
   register: '/register',
+  marketplace: '/marketplace',
   'empreendedor-dashboard': '/empreendedor/dashboard',
   'investidor-dashboard': '/investidor/dashboard',
   'parceiro-marketplace': '/parceiro/marketplace',
@@ -26,6 +34,10 @@ function getViewFromPath(pathname: string): View {
 
   if (pathname === routes.register) {
     return 'register';
+  }
+
+  if (pathname === routes.marketplace) {
+    return 'marketplace';
   }
 
   if (pathname === routes['empreendedor-dashboard']) {
@@ -91,6 +103,10 @@ export default function App() {
     return <ParceiroMarketplace />;
   }
 
+  if (view === 'marketplace') {
+    return <ParceiroMarketplace showTopbar={false} />;
+  }
+
   if (view === 'login') {
     return (
       <LoginForm
@@ -118,6 +134,7 @@ export default function App() {
   return (
     <LandingPage
       onLogin={() => navigateTo('login')}
+      onMarketplace={() => navigateTo('marketplace')}
       onRegister={() => {
         setAccountType('empreendedor');
         navigateTo('register');

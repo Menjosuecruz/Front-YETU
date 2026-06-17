@@ -1,7 +1,13 @@
 import { Bell, Search, Settings, UserRound } from 'lucide-react';
-export default function ParceiroMarketplace() {
+
+type ParceiroMarketplaceProps = {
+    showTopbar?: boolean;
+};
+
+export default function ParceiroMarketplace({ showTopbar = true }: ParceiroMarketplaceProps) {
     return (
         <main className="marketplace-page">
+            {showTopbar && (
             <header className="marketplace-topbar">
                 <strong>Yetu Hub Marketplace</strong>
 
@@ -24,6 +30,7 @@ export default function ParceiroMarketplace() {
                     </span>
                 </div>
             </header>
+            )}
             <header className="marketplace-header">
                 <div>
                     <h1>Benefícios Exclusivos para Membros do Hub</h1>

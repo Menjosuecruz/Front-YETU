@@ -15,10 +15,11 @@ import { Slide, Slides } from '../../components/animate-ui/effects';
 
 type LandingPageProps = {
   onLogin: () => void;
+  onMarketplace: () => void;
   onRegister: () => void;
 };
 
-export default function LandingPage({ onLogin, onRegister }: LandingPageProps) {
+export default function LandingPage({ onLogin, onMarketplace, onRegister }: LandingPageProps) {
   return (
     <main className="landing-shell">
       <header className="site-header animate-ui-navbar">
@@ -34,7 +35,15 @@ export default function LandingPage({ onLogin, onRegister }: LandingPageProps) {
               Empreendedores
             </a>
             <a href="#investidores">Investidores</a>
-            <a href="#marketplace">Marketplace</a>
+            <a
+              href="/marketplace"
+              onClick={(event) => {
+                event.preventDefault();
+                onMarketplace();
+              }}
+            >
+              Marketplace
+            </a>
           </Slides>
         </nav>
 
@@ -173,7 +182,13 @@ export default function LandingPage({ onLogin, onRegister }: LandingPageProps) {
               <li>Parceiros Verificados</li>
               <li>Oportunidades de Negócio</li>
             </ul>
-            <a href="#login" onClick={onRegister}>
+            <a
+              href="/marketplace"
+              onClick={(event) => {
+                event.preventDefault();
+                onMarketplace();
+              }}
+            >
               Explorar Marketplace
               <ArrowRight size={13} />
             </a>
