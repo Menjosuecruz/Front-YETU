@@ -293,9 +293,6 @@ export default function LandingPage({ onLogin, onMarketplace, onRegister }: Land
             <button className="green-button" type="button" onClick={onRegister}>
               Fazer Parte do Hub
             </button>
-            <button className="consultant-button" type="button" onClick={onLogin}>
-              Falar com Consultor
-            </button>
           </div>
         </div>
       </section>
