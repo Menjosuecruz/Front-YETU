@@ -1,6 +1,29 @@
+import { Bell, Search, Settings, UserRound } from 'lucide-react';
 export default function ParceiroMarketplace() {
     return (
         <main className="marketplace-page">
+            <header className="marketplace-topbar">
+                <strong>Yetu Hub Marketplace</strong>
+
+                <div className="marketplace-topbar-actions">
+                    <div className="marketplace-topbar-search">
+                        <input type="search" placeholder="Pesquisar no marketplace..." />
+                        <Search size={16} />
+                    </div>
+
+                    <button type="button" aria-label="Notificações">
+                        <Bell size={17} />
+                    </button>
+
+                    <button type="button" aria-label="Configurações">
+                        <Settings size={17} />
+                    </button>
+
+                    <span className="marketplace-avatar">
+                        <UserRound size={17} />
+                    </span>
+                </div>
+            </header>
             <header className="marketplace-header">
                 <div>
                     <h1>Benefícios Exclusivos para Membros do Hub</h1>

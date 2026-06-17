@@ -1,3 +1,4 @@
+import './dashboard.css';
 import { useState } from 'react';
 import {
   AlertCircle,
