@@ -137,7 +137,7 @@ export default function LandingPage({ onLogin, onMarketplace, onRegister }: Land
               <li>Mentoria com Experts</li>
             </ul>
             <a href="#login" onClick={onRegister}>
-              Saiba mais
+              Começar Jornada
               <ArrowRight size={13} />
             </a>
           </article>
@@ -156,7 +156,7 @@ export default function LandingPage({ onLogin, onMarketplace, onRegister }: Land
               <li>Relatórios de Performance</li>
             </ul>
             <a href="#login" onClick={onLogin}>
-              Explorar Portfólio
+              Ver Oportunidades
               <ArrowRight size={13} />
             </a>
           </article>
