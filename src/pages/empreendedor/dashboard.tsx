@@ -98,6 +98,8 @@ export default function EmpreendedorDashboard() {
                     </nav>
 
                     <div className="sidebar-bottom">
+                       
+
                         <div className="sidebar-support">
                             <a href="#suporte">
                                 <UserRound size={14} />
