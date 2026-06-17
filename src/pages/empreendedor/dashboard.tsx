@@ -98,10 +98,6 @@ export default function EmpreendedorDashboard() {
                     </nav>
 
                     <div className="sidebar-bottom">
-                        <button type="button" onClick={() => setActiveTab('marketplace')}>
-                            Ver Marketplace
-                        </button>
-
                         <div className="sidebar-support">
                             <a href="#suporte">
                                 <UserRound size={14} />
