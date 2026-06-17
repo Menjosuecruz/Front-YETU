@@ -173,9 +173,7 @@ export default function LandingPage({ onLogin, onMarketplace, onRegister }: Land
               <li>Parceiros Verificados</li>
               <li>Oportunidades de Negócio</li>
             </ul>
-            <a
-              href="#login" onClick={onLogin}
-            >
+            <a href="#marketplace" onClick={onMarketplace}>
               Explorar Marketplace
               <ArrowRight size={13} />
             </a>

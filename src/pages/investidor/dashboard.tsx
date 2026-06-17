@@ -9,7 +9,6 @@ import {
   Grid2X2,
   Handshake,
   LogOut,
-  MessageCircle,
   Plus,
   Search,
   Settings,
@@ -20,18 +19,18 @@ type DashboardTab =
   | 'visao-geral'
   | 'matches'
   | 'portfolio'
-  | 'oportunidades'
+  | 'marketplace'
+  | 'perfil'
   | 'preferencias'
-  | 'mensagens'
   | 'relatorios';
 
 const tabs = [
   { id: 'visao-geral', label: 'Visão Geral', icon: Grid2X2 },
   { id: 'matches', label: 'Matches', icon: Handshake },
   { id: 'portfolio', label: 'Portfólio', icon: FileText },
-  { id: 'oportunidades', label: 'Oportunidades', icon: BookOpen },
+  { id: 'marketplace', label: 'Marketplace', icon: BookOpen },
+  { id: 'perfil', label: 'Perfil', icon: UserRound },
   { id: 'preferencias', label: 'Preferências', icon: Settings },
-  { id: 'mensagens', label: 'Mensagens', icon: MessageCircle },
   { id: 'relatorios', label: 'Relatórios', icon: BarChart3 },
 ] satisfies Array<{ id: DashboardTab; label: string; icon: typeof Grid2X2 }>;
 
@@ -83,6 +82,29 @@ const opportunities = [
     need: '60,000kz',
     roi: '14% a.a.',
     equity: '5% - 9%',
+  },
+];
+
+const suggestedDeals = [
+  {
+    name: 'KambaPay',
+    sector: 'Fintech',
+    stage: 'Receita recorrente',
+    description: 'Pagamentos digitais para pequenos comerciantes com foco em operações de bairro e agentes locais.',
+    need: '150,000kz',
+    roi: '22% a.a.',
+    equity: '7% - 11%',
+    fit: 'Pode Gostar',
+  },
+  {
+    name: 'SolarCasa',
+    sector: 'Energia',
+    stage: 'Piloto validado',
+    description: 'Kits solares modulares para habitações periurbanas com manutenção por assinatura.',
+    need: '110,000kz',
+    roi: '19% a.a.',
+    equity: '6% - 9%',
+    fit: 'Pode Gostar',
   },
 ];
 
@@ -255,8 +277,8 @@ export default function InvestidorDashboard() {
                 <section className="matches-section tab-panel">
                   <div className="section-header">
                     <strong>Matches Encontrados</strong>
-                    <button type="button" className="view-all-btn" onClick={() => setActiveTab('oportunidades')}>
-                      Ver oportunidades
+                    <button type="button" className="view-all-btn" onClick={() => setActiveTab('marketplace')}>
+                      Ver marketplace
                     </button>
                   </div>
                   {matches.map((match) => (
@@ -265,13 +287,21 @@ export default function InvestidorDashboard() {
                 </section>
               )}
 
-              {activeTab === 'oportunidades' && (
+              {activeTab === 'marketplace' && (
                 <section className="opportunities-section tab-panel">
                   <div className="section-header">
-                    <strong>Startups para Investir</strong>
+                    <strong>Marketplace</strong>
                     <button type="button" className="view-all-btn">
                       Filtrar
                     </button>
+                  </div>
+
+                  <div className="marketplace-intro">
+                    <div>
+                      <span>Oportunidades de Negócio</span>
+                      <strong>Startups abertas para investimento</strong>
+                    </div>
+                    <p>Explore negócios verificados e oportunidades alinhadas ao seu ticket, setor e apetite de risco.</p>
                   </div>
 
                   <div className="opportunity-grid">
@@ -303,12 +333,75 @@ export default function InvestidorDashboard() {
                       </article>
                     ))}
                   </div>
+
+                  <div className="marketplace-intro compact">
+                    <div>
+                      <span>Negócios que poderá gostar</span>
+                      <strong>Recomendações para o seu perfil</strong>
+                    </div>
+                  </div>
+
+                  <div className="opportunity-grid suggested">
+                    {suggestedDeals.map((startup) => (
+                      <article className="opportunity-card suggested-card" key={startup.name}>
+                        <div className="opportunity-card-header">
+                          <span>{startup.sector}</span>
+                          <strong>{startup.fit}</strong>
+                        </div>
+                        <h2>{startup.name}</h2>
+                        <p>{startup.description}</p>
+                        <div className="opportunity-metrics">
+                          <div>
+                            <small>Necessidade</small>
+                            <span>{startup.need}</span>
+                          </div>
+                          <div>
+                            <small>ROI</small>
+                            <span>{startup.roi}</span>
+                          </div>
+                          <div>
+                            <small>Equity</small>
+                            <span>{startup.equity}</span>
+                          </div>
+                        </div>
+                        <button type="button" className="btn-secondary">
+                          Ver Negócio
+                        </button>
+                      </article>
+                    ))}
+                  </div>
                 </section>
               )}
 
               {activeTab === 'portfolio' && <ComingSoon title="Portfólio" />}
+              {activeTab === 'perfil' && (
+                <section className="profile-panel tab-panel">
+                  <div className="section-header">
+                    <strong>Perfil do Investidor</strong>
+                    <button type="button" className="view-all-btn">
+                      Editar dados
+                    </button>
+                  </div>
+                  <div className="profile-summary-grid">
+                    <article className="card">
+                      <span>Perfil</span>
+                      <strong>Maria Silva</strong>
+                      <p>Investidora anjo focada em tecnologia e comércio.</p>
+                    </article>
+                    <article className="card">
+                      <span>Ticket preferido</span>
+                      <strong>20,000kz - 100,000kz</strong>
+                      <p>Prioriza negócios com tração inicial.</p>
+                    </article>
+                    <article className="card">
+                      <span>Setores</span>
+                      <strong>Fintech, SaaS, Retail</strong>
+                      <p>Compatível com 12 oportunidades ativas.</p>
+                    </article>
+                  </div>
+                </section>
+              )}
               {activeTab === 'preferencias' && <ComingSoon title="Preferências" />}
-              {activeTab === 'mensagens' && <ComingSoon title="Mensagens" />}
               {activeTab === 'relatorios' && <ComingSoon title="Relatórios" />}
             </div>
           </div>

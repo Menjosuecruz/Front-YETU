@@ -15,7 +15,15 @@ import {
     UserRound,
 } from 'lucide-react';
 
-type DashboardTab = 'visao-geral' | 'matches' | 'parceiros' | 'aprendizado' | 'relatorios' | 'configuracoes';
+type DashboardTab =
+    | 'visao-geral'
+    | 'matches'
+    | 'marketplace'
+    | 'parceiros'
+    | 'aprendizado'
+    | 'perfil'
+    | 'relatorios'
+    | 'configuracoes';
 
 const sidebarTabs: Array<{
     id: DashboardTab;
@@ -24,8 +32,10 @@ const sidebarTabs: Array<{
 }> = [
     { id: 'visao-geral', label: 'Visão Geral', icon: Grid2X2 },
     { id: 'matches', label: 'Matches', icon: Handshake },
+    { id: 'marketplace', label: 'Marketplace', icon: BookOpen },
     { id: 'parceiros', label: 'Parceiros', icon: BriefcaseBusiness },
     { id: 'aprendizado', label: 'Aprendizado', icon: BookOpen },
+    { id: 'perfil', label: 'Perfil', icon: UserRound },
     { id: 'relatorios', label: 'Relatórios', icon: FileText },
     { id: 'configuracoes', label: 'Configurações', icon: Settings },
 ];
@@ -88,7 +98,9 @@ export default function EmpreendedorDashboard() {
                     </nav>
 
                     <div className="sidebar-bottom">
-                        <button type="button">Ver Oportunidades</button>
+                        <button type="button" onClick={() => setActiveTab('marketplace')}>
+                            Ver Marketplace
+                        </button>
 
                         <div className="sidebar-support">
                             <a href="#suporte">
@@ -140,6 +152,50 @@ export default function EmpreendedorDashboard() {
                                     <button type="button">Editar Detalhes</button>
                                 </aside>
                             </div>
+
+                            <section className="dashboard-tab-summary" aria-label="Resumo das áreas do empreendedor">
+                                <button type="button" className="summary-card" onClick={() => setActiveTab('matches')}>
+                                    <span>Matches</span>
+                                    <strong>3 conexões novas</strong>
+                                    <p>Investidores e parceiros com alta compatibilidade para o seu negócio.</p>
+                                </button>
+
+                                <button type="button" className="summary-card" onClick={() => setActiveTab('marketplace')}>
+                                    <span>Marketplace</span>
+                                    <strong>12 negócios e ofertas</strong>
+                                    <p>Explore empresas, fornecedores e oportunidades que podem gerar sinergia.</p>
+                                </button>
+
+                                <button type="button" className="summary-card" onClick={() => setActiveTab('parceiros')}>
+                                    <span>Parceiros</span>
+                                    <strong>4 recomendações</strong>
+                                    <p>Serviços estratégicos para vendas, jurídico, finanças e operação.</p>
+                                </button>
+
+                                <button type="button" className="summary-card" onClick={() => setActiveTab('aprendizado')}>
+                                    <span>Aprendizado</span>
+                                    <strong>2 módulos em aberto</strong>
+                                    <p>Conteúdos para melhorar pitch, gestão financeira e preparação para investimento.</p>
+                                </button>
+
+                                <button type="button" className="summary-card" onClick={() => setActiveTab('perfil')}>
+                                    <span>Perfil</span>
+                                    <strong>85% completo</strong>
+                                    <p>Complete dados, plano de negócios e documentação para aumentar visibilidade.</p>
+                                </button>
+
+                                <button type="button" className="summary-card" onClick={() => setActiveTab('relatorios')}>
+                                    <span>Relatórios</span>
+                                    <strong>Performance em breve</strong>
+                                    <p>Acompanhe métricas, evolução das conexões e progresso do negócio.</p>
+                                </button>
+
+                                <button type="button" className="summary-card" onClick={() => setActiveTab('configuracoes')}>
+                                    <span>Configurações</span>
+                                    <strong>Preferências da conta</strong>
+                                    <p>Ajuste notificações, dados de acesso e preferências da plataforma.</p>
+                                </button>
+                            </section>
                         </>
                     )}
 
@@ -175,33 +231,77 @@ export default function EmpreendedorDashboard() {
                         </section>
                     )}
 
+                    {activeTab === 'marketplace' && (
+                        <section className="marketplace-section" id="marketplace">
+                            <div className="section-title-row">
+                                <h2>Marketplace de Negócios</h2>
+                                <a href="#filtros">Filtrar</a>
+                            </div>
+
+                            <div className="business-grid">
+                                <article className="business-card">
+                                    <span>Negócio em expansão</span>
+                                    <h3>AgroLink Angola</h3>
+                                    <p>Marketplace agrícola procurando conexões comerciais, parceiros logísticos e fornecedores regionais.</p>
+                                    <button type="button">Ver negócio</button>
+                                </article>
+
+                                <article className="business-card">
+                                    <span>Possível parceiro</span>
+                                    <h3>KambaPay</h3>
+                                    <p>Fintech com soluções de cobrança que podem apoiar lojas em crescimento e negócios digitais.</p>
+                                    <button type="button">Analisar sinergia</button>
+                                </article>
+
+                                <article className="business-card">
+                                    <span>Fornecedor recomendado</span>
+                                    <h3>SolarCasa</h3>
+                                    <p>Empresa de energia modular aberta a revendedores, instaladores e canais comerciais locais.</p>
+                                    <button type="button">Ver oportunidade</button>
+                                </article>
+                            </div>
+                        </section>
+                    )}
+
                     {activeTab === 'parceiros' && (
                         <section className="partners-section" id="parceiros">
                             <div className="section-title-row">
-                                <h2>Parceiros de Serviços</h2>
+                                <h2>Parceiros Estratégicos</h2>
                                 <a href="#todos-parceiros">Ver todos</a>
+                            </div>
+
+                            <div className="partners-highlight">
+                                <div>
+                                    <span>Recomendado para o seu momento</span>
+                                    <strong>Priorize parceiros de vendas, jurídico e operações</strong>
+                                </div>
+                                <button type="button">Solicitar curadoria</button>
                             </div>
 
                             <div className="partners-grid">
                                 <article className="partner-card">
+                                    <span className="partner-category">Fiscal</span>
                                     <h3>Contabilidade Prime</h3>
                                     <p>Contabilidade, organização fiscal e fechamento de contas para empresas que precisam manter a operação em dia.</p>
                                     <button type="button">Solicitar Consultoria</button>
                                 </article>
 
                                 <article className="partner-card">
+                                    <span className="partner-category">Financeiro</span>
                                     <h3>Consultoria Fiscal Expert</h3>
                                     <p>Planejamento tributário, apoio financeiro e orientação para reduzir riscos e melhorar resultados.</p>
                                     <button type="button">Ver Oferta</button>
                                 </article>
 
                                 <article className="partner-card">
+                                    <span className="partner-category">Jurídico</span>
                                     <h3>Suporte Jurídico Empresarial</h3>
                                     <p>Assessoria em contratos, compliance e estruturação jurídica para proteger o negócio em crescimento.</p>
                                     <button type="button">Entrar em Contato</button>
                                 </article>
 
                                 <article className="partner-card">
+                                    <span className="partner-category">Growth</span>
                                     <h3>Marketing e Crescimento</h3>
                                     <p>Estratégias digitais, captação de clientes e posicionamento de marca para acelerar vendas.</p>
                                     <button type="button">Ver Proposta</button>
@@ -242,6 +342,32 @@ export default function EmpreendedorDashboard() {
                                     <div className="learning-thumbnail gray" />
                                     <h3>Due diligence</h3>
                                     <p>Conteúdo bloqueado até completar o perfil.</p>
+                                </article>
+                            </div>
+                        </section>
+                    )}
+
+                    {activeTab === 'perfil' && (
+                        <section className="profile-section" id="perfil">
+                            <div className="section-title-row">
+                                <h2>Perfil do Empreendedor</h2>
+                                <a href="#editar-perfil">Editar</a>
+                            </div>
+
+                            <div className="profile-info-grid">
+                                <article className="profile-card">
+                                    <div className="card-title-row">
+                                        <h2>Minha Empresa</h2>
+                                        <span>85%</span>
+                                    </div>
+                                    <p>Loja de Informática com foco em venda, suporte técnico e expansão de e-commerce.</p>
+                                </article>
+
+                                <article className="profile-card">
+                                    <div className="card-title-row">
+                                        <h2>Objetivo atual</h2>
+                                    </div>
+                                    <p>Captar investimento e parceiros para estoque, marketing e automação comercial.</p>
                                 </article>
                             </div>
                         </section>
