@@ -135,7 +135,7 @@ export default function ParceiroMarketplace({ showTopbar = true }: ParceiroMarke
                     </nav>
 
                     <div className="sidebar-bottom">
-                        
+                       
 
                         <div className="sidebar-support">
                             <a href="#configuracoes">
