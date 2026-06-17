@@ -174,11 +174,7 @@ export default function LandingPage({ onLogin, onMarketplace, onRegister }: Land
               <li>Oportunidades de Negócio</li>
             </ul>
             <a
-              href="/marketplace"
-              onClick={(event) => {
-                event.preventDefault();
-                onMarketplace();
-              }}
+              href="#login" onClick={onLogin}
             >
               Explorar Marketplace
               <ArrowRight size={13} />
