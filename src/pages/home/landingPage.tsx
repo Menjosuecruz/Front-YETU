@@ -35,15 +35,6 @@ export default function LandingPage({ onLogin, onMarketplace, onRegister }: Land
               Empreendedores
             </a>
             <a href="#investidores">Investidores</a>
-            <a
-              href="/marketplace"
-              onClick={(event) => {
-                event.preventDefault();
-                onMarketplace();
-              }}
-            >
-              Marketplace
-            </a>
           </Slides>
         </nav>
 
