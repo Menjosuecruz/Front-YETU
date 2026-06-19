@@ -135,9 +135,7 @@ export default function ParceiroMarketplace({ showTopbar = true }: ParceiroMarke
                     </nav>
 
                     <div className="sidebar-bottom">
-                        <button type="button" onClick={() => setActiveTab('negocios')}>
-                            Ver Parcerias
-                        </button>
+                       
 
                         <div className="sidebar-support">
                             <a href="#configuracoes">
