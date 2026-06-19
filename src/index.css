@@ -1,5 +1,5 @@
 @import "./pages/investidor/dashboard.css";
-
+@import "tailwindcss";
 :root {
   color: #081344;
   background: #ffffff;
