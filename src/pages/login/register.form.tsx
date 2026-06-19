@@ -1,4 +1,4 @@
-import type { FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import {
   ArrowLeft,
   BriefcaseBusiness,
@@ -12,6 +12,7 @@ import {
   User,
 } from 'lucide-react';
 import { Fade, Slide, Slides } from '../../components/animate-ui/effects';
+import { useAuth } from '../../hooks/useAuth';
 
 type AccountType = 'empreendedor' | 'investidor' | 'parceiro';
 
@@ -82,14 +83,59 @@ export default function RegisterForm({
   onLogin,
   onRegisterSuccess,
 }: RegisterFormProps) {
-  const content = registerContent[accountType];
   const isEntrepreneur = accountType === 'empreendedor';
   const isInvestor = accountType === 'investidor';
   const isPartner = accountType === 'parceiro';
+  const content = registerContent[accountType];
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  // 1. Estados para os campos do formulário
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    organization: '',
+    profileType: '',
+    password: '',
+    confirmPassword: ''
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const register = useAuth((state) => state.register); // Assumindo que você adicionou register ao hook
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    onRegisterSuccess();
+    if (!formData.name || !formData.email || !formData.password || !formData.organization) {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      alert("As senhas não coincidem!");
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      // 2. Monta o payload conforme a estrutura do seu banco
+      await register({
+        ...formData,
+        role: accountType.toUpperCase(),
+        accountType: formData.profileType // ex: 'ideia', 'anjo', etc
+      });
+
+      onRegisterSuccess();
+    } catch (error: any) {
+      // Isso mostrará exatamente o que o backend reclamou
+      console.error("Detalhes do Erro:", error.response?.data);
+      alert("Erro ao criar conta: " + JSON.stringify(error.response?.data?.message || "Erro desconhecido"));
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -136,14 +182,14 @@ export default function RegisterForm({
             </button>
           </div>
 
-          <form className="login-form register-form animate-ui-auth-fields" onSubmit={handleSubmit}>
+          <form className="login-form register-form" onSubmit={handleSubmit}>
             <Slides className="auth-field-motion" direction="up" offset={12} delay={0.18}>
               <div className="form-grid">
                 <label>
                   Nome completo
                   <span>
                     <User size={17} />
-                    <input type="text" placeholder="Seu nome" autoComplete="name" />
+                    <input type="text" name="name" placeholder="Seu nome" autoComplete="name" onChange={handleInputChange} />
                   </span>
                 </label>
 
@@ -151,7 +197,7 @@ export default function RegisterForm({
                   Telefone
                   <span>
                     <Phone size={17} />
-                    <input type="tel" placeholder="+244 900 000 000" autoComplete="tel" />
+                    <input type="tel" name="phone" placeholder="+244 900 000 000" autoComplete="tel" onChange={handleInputChange} />
                   </span>
                 </label>
               </div>
@@ -160,7 +206,7 @@ export default function RegisterForm({
                 Email
                 <span>
                   <Mail size={17} />
-                  <input type="email" placeholder="seu@email.com" autoComplete="email" />
+                  <input type="email" name="email" placeholder="seu@email.com" autoComplete="email" onChange={handleInputChange} />
                 </span>
               </label>
 
@@ -168,7 +214,7 @@ export default function RegisterForm({
                 {content.organizationLabel}
                 <span>
                   <Building size={17} />
-                  <input type="text" placeholder={content.organizationPlaceholder} autoComplete="organization" />
+                  <input type="text" name="organization" placeholder={content.organizationPlaceholder} autoComplete="organization" onChange={handleInputChange} />
                 </span>
               </label>
 
@@ -176,7 +222,7 @@ export default function RegisterForm({
                 {content.profileLabel}
                 <span>
                   <BriefcaseBusiness size={17} />
-                  <select defaultValue="">
+                  <select defaultValue="" name="profileType" onChange={handleInputChange}>
                     <option value="" disabled>
                       Selecione uma opção
                     </option>
@@ -194,7 +240,7 @@ export default function RegisterForm({
                   Senha
                   <span>
                     <Lock size={17} />
-                    <input type="password" placeholder="Crie uma senha" autoComplete="new-password" />
+                    <input type="password" name="password" placeholder="Crie uma senha" autoComplete="new-password" onChange={handleInputChange} />
                   </span>
                 </label>
 
@@ -202,7 +248,7 @@ export default function RegisterForm({
                   Confirmar senha
                   <span>
                     <Lock size={17} />
-                    <input type="password" placeholder="Repita a senha" autoComplete="new-password" />
+                    <input type="password" name="confirmPassword" placeholder="Repita a senha" autoComplete="new-password" onChange={handleInputChange} />
                   </span>
                 </label>
               </div>
@@ -213,8 +259,8 @@ export default function RegisterForm({
               </label>
             </Slides>
 
-            <button className="login-submit" type="submit">
-              Criar conta como {content.submitLabel}
+            <button className="login-submit" type="submit" disabled={isLoading}>
+              {isLoading ? 'Criando...' : `Criar conta como ${content.submitLabel}`}
             </button>
           </form>
 
